@@ -20,6 +20,11 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
+    @GetMapping("/healthz")
+    public ResponseEntity<?> handle() {
+
+        return ResponseEntity.status(HttpStatus.OK).body("service runing");
+    }
 
     @GetMapping()
     public ResponseEntity<?> getCustomers() {
